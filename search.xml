@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>好久不见</title>
+      <link href="/Long-Time-No-See/"/>
+      <url>/Long-Time-No-See/</url>
+      
+        <content type="html"><![CDATA[<h1 id="好久不见"><a href="#好久不见" class="headerlink" title="好久不见"></a>好久不见</h1><p>上一次写的文章还是2020年9月的小米手环5NFC的体验，而如今时间已经来到2022年的五一劳动节，这几年因为 <code>2019-nCoV</code> 的出现，全世界所有人类的生活都发生了改变，无论是经济、医疗、学业、社交、娱乐等等方面都受到了冲击。<br>十年前，那时微博才刚刚起步，如今微博已经变成了粪坑。虽然我从2017年开始就没用微博了，但是因为疫情，我却用上了微博的热搜，相对于以前的传统媒体平台，微博的热搜如今已经变成了获取一些事件报告的最快途径，说来可笑，现在国内的互联网平台都开始“开倒车”，显示IP归属地，上次看到显示IP归属地还记得是什么时候吗？珊瑚虫。关于这个显示IP归属地其实大家看的最多其实是“标注境外势力”，确实一些比较LOW的可以一看出来的，但是我们静下心想想，有个东西叫做代理。微博用户<code>酱紫表</code>已经演示了1分钟一个地的发微博，那么“境外非法”势力就不会挂代理吗，如果对方挂了代理，那么是“境内反智”？之前有个朋友给我说可以封IP啊，可是境内的IPV4地址早都枯竭了，一个片区都是一个IP出口，那一个封怕不是整个片区都不用上了，革命尚未结束，同志仍需努力。<br>扯远了，还是继续聊聊这个破站吧，虽然这么多年下来就没好好的写的博客，但是这个域名还是做了一些诸如DDNS等东西，某天我在远程回家的时候发现连不上了，一解析才发现原来是域名过期了，匆匆忙忙续上费然后想着到五一写点东西更新下吧，就当我打开本子后才发现，之前装的manjaro早已被我重装了Windows了，里面的博客源文件早都没有了，感觉去翻以前的冷呗，才发现文章备份时间还是2019年7月，于是就重0构建。<br>不过这个这次我并不是在笔记本上搭建环境了，而是家里的一台Debian虚拟机上构建了，不仅仅是因为虚拟机有全盘快照计划，并且虚拟机上的文件也同步到一台存储上面，而将博客重新搭建后，我翻了翻以前的一些文章。</p><h2 id="怀旧"><a href="#怀旧" class="headerlink" title="怀旧"></a>怀旧</h2><p>怀旧，这两个字如果你游戏玩家，那么这几年你应该听到过这个词很多次，无论是 Remastered 、 Remake 还是丢人的 Reforged ，重置也是一种怀旧，更别提所谓的各种怀旧服，不仅仅有魔兽世界、传奇这种明显“大叔向”的怀旧服，连当年受众群是小朋友的塞尔号<del>我总是说成塞尔达</del>，都推出了怀旧服，果然怀旧是是全年龄向的<del>笑</del>。<br>翻以前的文章的时候，我翻到了这个<br><img src="https://ooo.0o0.ooo/2017/04/03/58e21cb45e8a0.png"><br>这图是来源于2017年4月3的文章，这个图是我上一个境内站当时的截图，当年也是在那台服务器上瞎搞瞎弄，当时站点好像是2015年五一前夕搭建的，所以这文章是7周年纪念日？当时其实又要考虑是否把之前的内容搬到这个站上面，想想算了，当年也是傻，域名到期后没去注销备案，然后被人抢注后顶着我的备案瞎搞。<br>其实还是有很多文章记录了很多东西，例如多说美化CSS，没错当年多说凭借着分享到微博这功能可以说是那下了国内最大的份额，那时多少想着是如何打破信息孤岛，串联世界，而现在的互联网全是孤岛。还有代码，以前文章里面不仅仅有一些代码的实现，也有对系统架构的分析与理解，而如今在运维岗的多，自己手写的最多的代码反而是魔兽世界的插件，这次翻新，把之前的一些博客删除了，不仅仅涉及到隐私，还有部分内容是违法的，例如分析某APP的API，既然法律部门没找上来，我也还是识趣的删了吧。<br>真简简单单的随笔，完全不知道自己写了啥，纯粹就是流水账。这两年拍视频不就是以前的写博客吗，当初给自己说的拍vlog，如今快4年了我还是仅仅建好了文件夹。<br>最几年心态的转变还是太大了，作为一个奔三的“中年人”，希望自己别那么油腻吧。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自己动手做一台软路由</title>
+      <link href="/ProxmoxVE-and-LEDE/"/>
+      <url>/ProxmoxVE-and-LEDE/</url>
+      
+        <content type="html"><![CDATA[<p>基于<code>Proxmox VE</code>平台搭建一台<code>LEDE</code>软路由  </p><span id="more"></span><h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>随着境内网络的发展，目前来讲搭载ARM的路由器越发不能满足自己的需求，而机房设备又因其工作环境不适合大众家用，于是自己动手组装一台X86的PC作为软路由。  </p><h1 id="确定方案"><a href="#确定方案" class="headerlink" title="确定方案"></a>确定方案</h1><p>简单来说方案就两种，一种是物理机直接安装路由系统，好处就是不存在虚拟机的性能损耗，不会出现个别硬件在虚拟化后直通单独，缺点就是想对于虚拟化来讲没有一个方便的快照系统。而虚拟化后生小鸡装虚拟机的好处就是可以快照，不怕搞蹦系统，可以在更加精确的按需分配小鸡的运算资源，可以开多个小鸡实现不同系统合一，缺点就是性能损耗以及部分硬件的直通难度。<br>我目前的采用的方案是虚拟化开小鸡的方案  </p><h2 id="购买硬件"><a href="#购买硬件" class="headerlink" title="购买硬件"></a>购买硬件</h2><p>因为确定了采用虚拟化的方式，所以那么CPU肯定要选支持<code>VT-d</code>这种硬件虚拟化的技术，作为软路由，<code>THIN ITX</code>的工控主板也是有优势的，<code>Intel</code>的网卡的优先级也是比较高的。<br>最后的我的硬件配置为E3-1265L+DQ77KB+8G 1600+128G（MSATA）<br>在咸鱼花了750收了一台成品乱路由，但他的CPU为是奔腾的G2100T，于是自己的在某福报网站上购买了一个<code>E3-1265L</code>，这颗CPU在<a href="https://ark.intel.com/content/www/us/en/ark.html">Intel Ark</a>上都找不到的，在<a href="https://www.chiphell.com/thread-1904567-1-1.html">Chiphell</a>能找到一些相关测试，4C8T2.4G的性能来讲作为软路由完完全全可以满足我的性能需求了。AIDA64单烤FPU的温度78左右，emmm后面换个IS-30吧<br>主板DQ77KB这个板子其实一直处于涨价的阶段，以前才200+现在淘宝能找到的基本都是500了，这个板子自带两个Intel千兆网卡且有一个网口支持AMT，可以自己再加一个MINI-PCIE的无线网卡,虽然板子支持MSATA的SSD，但是其为SATA2，所以性能也不会咋地，跑个软路由够了，支持DC供电。<br>内存和硬盘都是成品里自带的，都是杂牌，颗粒也不想查了，在win10 1903下用AIDA64跑了下内存延迟是160,emmm等那天条子挂了再换吧  </p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装虚拟化平台"><a href="#安装虚拟化平台" class="headerlink" title="安装虚拟化平台"></a>安装虚拟化平台</h3><p>这里虚拟化平台使用的是<a href="https://www.proxmox.com/">Proxmox Virtual Environment</a>（以下简称<code>PVE</code>）,PVE是一款基于<code>Debian</code>的开源服务器虚拟化环境，支持LXC和KVM，虽然是开源的，但是会提示购买授权。<br>安装PVE的过程很简单，去官网下载镜像然后引导安装即可，设置IP时一定要设置好，因为PVE安装后不支持DHCP，所以安装的时候只插一个网口，而这个网口就是LAN口，网关地址可以设置为你即将安装的软路由的LAN地址。但是我安装时遇到了问题，我当时安装时官方最新的发行版本是6.0.4（写稿时发现官网已回滚6.0.1），当时6.0.4在引导进入安装界面后无法进行安装操作，安装程序无法正常启动显示，于是我改安装的5.4.3（看了眼官网5.4.3的也回滚5.4.1了……），就能成功安装了。  </p><h3 id="部署虚拟机"><a href="#部署虚拟机" class="headerlink" title="部署虚拟机"></a>部署虚拟机</h3><p>首先将其他网卡的网口映射&#x2F;直通进来，方便后面给虚拟机。<br>我采用的软路由系统为<code>koolshare</code>修改的<code>LEDE</code>,<code>LEDE</code>是以前人们不满足<code>OpenWRT</code>而新开的分支，如今已经合并了，目前<code>LEDE</code>的状态是<a href="https://en.wikipedia.org/wiki/OpenWrt#Releases">Older version, still supported</a>，我选择的镜像为koolshare提供的虚拟机磁盘镜像。  </p><p>在PVE里根据自己的物理机与实际需求创建好虚拟机，因为我采用的是虚拟机磁盘镜像，在创建好虚拟机后，将虚拟机的磁盘删除后，在物理机的里添加硬盘</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qm importdisk $虚拟机编号 $上传的虚拟机磁盘镜像 local-lvm</span><br></pre></td></tr></table></figure><p>添加硬盘后对编辑LEDE的虚拟机硬件将刚才导入的磁盘绑定进去开启虚拟机即可</p><h3 id="配置LEDE"><a href="#配置LEDE" class="headerlink" title="配置LEDE"></a>配置LEDE</h3><p>将虚拟机的WAN口与猫的互联网口相连，然后在LEDE里指定端口，然后就和配置传统路由器一样了，配置完后记得在PVE里保存快照</p><h2 id="总结体验"><a href="#总结体验" class="headerlink" title="总结体验"></a>总结体验</h2><p>虽然我全文没有一个图，甚至连一个详细的配置方式都没有，但是我把我遇到的坑和关键点也出来了，因为无论是安装PVE还是设置虚拟机绝大部分都是一些非常常规的操作，关键点写出来就行了。我的给我的虚拟机的配置是4C4T+4G，这个配置跑软路由性能过剩了，体验相对于之前的AC68U完完全全强太多了，之前的68U开启服务后，一段时间后就会变的很慢，连1080P60FPS的YouTube都看不了，而软路由没遇到这个问题，跑了几天了晚上高峰期2KYouTube依旧可以随意拖拉，而在lede自己跑BT跑满本地带宽（100M）的情况下，虚拟机的CPU占用不到16%</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LEDE </tag>
+            
+            <tag> ProxmoxVE </tag>
+            
+            <tag> OpenWRT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用树莓派做一个短信收发平台</title>
+      <link href="/raspberry-pi-sms/"/>
+      <url>/raspberry-pi-sms/</url>
+      
+        <content type="html"><![CDATA[<p>手机短信里全是推广或者验证码信息？有多的卡或者异国他乡不方便使用以前的卡？那就就用树莓派做一个短信收发平台吧  </p><span id="more"></span><h1 id="前情介绍"><a href="#前情介绍" class="headerlink" title="前情介绍"></a>前情介绍</h1><p>现在境内随随便便注册个啥都需要验证手机，然后短信就成为了广告推广的重灾区，随随便便拿出手机，短信收件箱99%都是广告推广，今天狗东告诉你啥啥啥促销了，明天爱奇艺告诉你VIP也打折了，后天你之前在天猫之前买的店家告诉你他们又要打折了了，接下来又有银行说现在办信用卡有活动了……然后随着微信等社交软件的发展，手机短信真的就成为了一个天然的广告地。<br>我手里有两张卡，一张用了多年的移动和一张两年的联通，为什么会开一张联通，因为我使用的是非国行手机，联通的FDD-LTE和WCDMA比移动的TD-LTE体验好很多。两张卡的后果就是手机收到垃圾短信的次数变得更多，于是我想改变这个情况——用树莓派接收短信并通过Telegram Bot发送给我的Telegram。</p><h1 id="开始折腾"><a href="#开始折腾" class="headerlink" title="开始折腾"></a>开始折腾</h1><p>首先，要将sim卡接到树莓派上就需要买GSM模块，然而我搜了下模块的价格，打扰了，于是我去想到了去购买USB的sim网卡，在 <a href="https://wammu.eu/smsd/">Gammu SMSD</a>的<a href="https://wammu.eu/phones/">数据库</a>里，找了下兼容设备后，我购买了华为的<code>E173</code><br><a href="https://wammu.eu/smsd/">Gammu SMSD</a>是一个用来接收与发送短信的服务，可以运行在树莓派上<br>我手里的树莓派是树莓派3B+，使用的是<code>Broadcom BCM2837</code>，这是一个64位的SOC，网上一直传着64位系统的性能可以达到32位系统的30倍，然而树莓派官方却没有为他推出64位的操作系统，我在网上找到人社区为3b+维护的64位的Centos和ubuntu都有或多或少的问题，于是这次把系统换回了官方系统<del>其实我这次有尝试Manjro-ARM，但是在配置port时总访问不了，有知道怎么解决的请在下面告诉我</del>。<br>我个人推荐大家使用root账户进行安装配置，我一开始用的普通账户+sudo的方式，但是Gammu SMSD服务起不起来，全程root账户后就一切正常了。  </p><p>将USB网卡插在树莓派上</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看USB设备</span></span><br><span class="line">~ $ lsusb </span><br><span class="line">Bus 001 Device 006: ID 12d1:1436 Huawei Technologies Co., Ltd. Broadband stick</span><br><span class="line">Bus 001 Device 004: ID 0424:7800 Standard Microsystems Corp. </span><br><span class="line">Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub</span><br><span class="line">Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line"></span><br><span class="line">~ $ ls /dev/ttyU*</span><br><span class="line">/dev/ttyUSB0  /dev/ttyUSB1  /dev/ttyUSB2</span><br></pre></td></tr></table></figure><p>因为我是WCDMA网卡，会有三个，后面配置时使用ttyUSB0和ttyUSB2都能正常工作，但是我发现重启设备后，有时USB2会变成USB3而，0和1却依旧存在，于是我使用的ttyUSB0进行配置  </p><h2 id="接下来就是安装与配置软件"><a href="#接下来就是安装与配置软件" class="headerlink" title="接下来就是安装与配置软件"></a>接下来就是安装与配置软件</h2><h3 id="安装配置-Gammu"><a href="#安装配置-Gammu" class="headerlink" title="安装配置 Gammu"></a>安装配置 Gammu</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~ $ apt install gammu</span><br></pre></td></tr></table></figure><p>使用 <code>gammu-config</code> 进行配置，具体的配置参数等请参考<a href="https://wammu.eu/phones/">设备文档</a>和实际USB段口配置，配置完后使用 <code>gammu --identify</code> 进行验证</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">~ $ gammu --identify</span><br><span class="line">Device               : /dev/ttyUSB0</span><br><span class="line">Manufacturer         : Huawei</span><br><span class="line">Model                : E173</span><br><span class="line">Firmware             : </span><br><span class="line">IMEI                 : </span><br><span class="line">SIM IMSI             : </span><br></pre></td></tr></table></figure><h3 id="安装配置-Gammu-SMSD"><a href="#安装配置-Gammu-SMSD" class="headerlink" title="安装配置 Gammu SMSD"></a>安装配置 Gammu SMSD</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">~ $ apt install gammu-smsdrc</span><br><span class="line"></span><br><span class="line">~ $ vim /etc/gammu-smsdrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Configuration file <span class="keyword">for</span> Gammu SMS Daemon</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Gammu library configuration, see gammurc(5)</span></span><br><span class="line">[gammu]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Please configure this!</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">请根据自己的实际情况修改配置</span></span><br><span class="line">port = /dev/ttyUSB0</span><br><span class="line">connection = at115200</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Debugging</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">logformat = textall</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">SMSD configuration, see gammu-smsdrc(5)</span></span><br><span class="line">[smsd]</span><br><span class="line">RunOnReceive=/root/receive-sms.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">添加收到短信后的操作</span></span><br><span class="line">service = null #如果需要保存短信请改为 files，并在下方那该确定文件位置</span><br><span class="line">logfile = syslog</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Increase <span class="keyword">for</span> debugging information</span></span><br><span class="line">debuglevel = 0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Paths <span class="built_in">where</span> messages are stored</span></span><br><span class="line">inboxpath = /var/spool/gammu/inbox/</span><br><span class="line">outboxpath = /var/spool/gammu/outbox/</span><br><span class="line">sentsmspath = /var/spool/gammu/sent/</span><br><span class="line">errorsmspath = /var/spool/gammu/error/</span><br><span class="line"></span><br><span class="line">~ $ cat /root/receive-sms.sh </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">TOKEN=&quot;XXX&quot;</span><br><span class="line">CHAT_ID=XXX</span><br><span class="line">URL=&quot;https://api.telegram.org/bot$TOKEN/sendMessage&quot;</span><br><span class="line">for i in `seq $SMS_MESSAGES` ; do</span><br><span class="line">  eval &quot;curl -s -X POST $URL -d chat_id=$CHAT_ID -d text=\&quot;\$&#123;SMS_$&#123;i&#125;_TEXT&#125;\&quot;&quot;</span><br><span class="line">  done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这个脚本就是调用Telegram Bot的API发送消息</span></span><br></pre></td></tr></table></figure><h3 id="创建配置Telegram-Bot"><a href="#创建配置Telegram-Bot" class="headerlink" title="创建配置Telegram Bot"></a>创建配置Telegram Bot</h3><p>访问 <a href="https://telegram.me/botfather">BotFather</a>，根据提示按步骤创建属于自己的Bot，取得属于自己的Token。<br>然后用自己访问这个Bot，不是在<code>BotFather</code>，对他随便发句Hello World啥的。然后访问<code>https://api.telegram.org/botTOKEN/getUpdates</code>，把TOKEN替换成自己的Bot的Token，回返回一段JSON，然后找到<code>chat</code>下自己的<code>id</code>，替换上面脚本里的字段。然后执行<code>gammu-smsd</code>进行测试，给手机号发短信，看能不能自动转发到Telegram里，如果成功，就执行<code>systemctl start gammu-smsd</code> 让他开机自启吧</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+            <tag> Telegram-Bot </tag>
+            
+            <tag> SNS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最后一天</title>
+      <link href="/Last-day/"/>
+      <url>/Last-day/</url>
+      
+        <content type="html"><![CDATA[<p>随笔</p><span id="more"></span><h1 id="这不是这个站的最后一天"><a href="#这不是这个站的最后一天" class="headerlink" title="这不是这个站的最后一天"></a>这不是这个站的最后一天</h1><p>这个站已经成功续费+1Y了，今天是上一个境内站的最后一天。<br><img src="https://ooo.0o0.ooo/2017/04/03/58e21cb45e8a0.png"><br>用的阿里青岛的机房，两年时间过的也是很快，中间那个站不知道出了多少毛病，仅仅是一个当时连linux都不会的人折腾地，不会linux、php、html等还不是活不来了，对吧。</p><p>老站的多说，因为多说的问题挂了，新站又搞了多说，作为一个遇事不决就Google的人，我想说新站的多说要比老站好看很多很多。<br>然而，多说也挂了，这次是真的挂了。多说已经决定转型了，还好新站没有评论（唯一的一次也只是我们测试脚本，测试完就删了），所以转移到Disqus了。</p><p>Disqus好处就是自带图床，不用想多说以前那样我还要推荐图床。<br>被墙不是我的烦恼，因为他不仅可以过滤一部分人，还可以测试网络。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新家</title>
+      <link href="/the-new-home/"/>
+      <url>/the-new-home/</url>
+      
+        <content type="html"><![CDATA[<p> 新开了一个博客，原因很简单</p><ul><li>买了域名，但是服务器到期了。</li><li>买了域名，但是不想再去备案。</li><li>买了域名，但是不用感觉有病。</li></ul><p>刚好github page有免费的300M空间，搭个静态博客还是不错的。</p><p>毕竟是github，这边也应该会更加注重技术性方面的东西了，境内的博客我就用来放放照片装装逼什么的了。<br>虽然即将实习，但是我还是希望我会将这个博客经营下去，毕竟这个域名一年就几刀，服务器还不收费呢。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/hello-world/"/>
+      <url>/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br> <span id="more"></span></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

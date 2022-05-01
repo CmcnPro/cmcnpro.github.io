@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>自己动手做一台软路由 | yGin.pro</title><meta name="keywords" content="LEDE,ProxmoxVE,OpenWRT"><meta name="author" content="Gin"><meta name="copyright" content="Gin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基于Proxmox VE平台搭建一台LEDE软路由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己动手做一台软路由">
+<meta property="og:url" content="https://ygin.pro/ProxmoxVE-and-LEDE/index.html">
+<meta property="og:site_name" content="yGin.pro">
+<meta property="og:description" content="基于Proxmox VE平台搭建一台LEDE软路由">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ygin.pro/img/TopImg.jpg">
+<meta property="article:published_time" content="2019-07-28T07:11:01.000Z">
+<meta property="article:modified_time" content="2022-05-01T11:54:46.347Z">
+<meta property="article:author" content="Gin">
+<meta property="article:tag" content="LEDE">
+<meta property="article:tag" content="ProxmoxVE">
+<meta property="article:tag" content="OpenWRT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ygin.pro/img/TopImg.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://ygin.pro/ProxmoxVE-and-LEDE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-80316091-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-80316091-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '自己动手做一台软路由',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-01 19:54:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Gin.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/TopImg.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">yGin.pro</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">自己动手做一台软路由</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-07-28T07:11:01.000Z" title="发表于 2019-07-28 15:11:01">2019-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-01T11:54:46.347Z" title="更新于 2022-05-01 19:54:46">2022-05-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="自己动手做一台软路由"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><span class="disqus-comment-count"><a href="https://ygin.pro/ProxmoxVE-and-LEDE/#disqus_thread"></a></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>基于<code>Proxmox VE</code>平台搭建一台<code>LEDE</code>软路由  </p>
+<span id="more"></span>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>随着境内网络的发展，目前来讲搭载ARM的路由器越发不能满足自己的需求，而机房设备又因其工作环境不适合大众家用，于是自己动手组装一台X86的PC作为软路由。  </p>
+<h1 id="确定方案"><a href="#确定方案" class="headerlink" title="确定方案"></a>确定方案</h1><p>简单来说方案就两种，一种是物理机直接安装路由系统，好处就是不存在虚拟机的性能损耗，不会出现个别硬件在虚拟化后直通单独，缺点就是想对于虚拟化来讲没有一个方便的快照系统。而虚拟化后生小鸡装虚拟机的好处就是可以快照，不怕搞蹦系统，可以在更加精确的按需分配小鸡的运算资源，可以开多个小鸡实现不同系统合一，缺点就是性能损耗以及部分硬件的直通难度。<br>我目前的采用的方案是虚拟化开小鸡的方案  </p>
+<h2 id="购买硬件"><a href="#购买硬件" class="headerlink" title="购买硬件"></a>购买硬件</h2><p>因为确定了采用虚拟化的方式，所以那么CPU肯定要选支持<code>VT-d</code>这种硬件虚拟化的技术，作为软路由，<code>THIN ITX</code>的工控主板也是有优势的，<code>Intel</code>的网卡的优先级也是比较高的。<br>最后的我的硬件配置为E3-1265L+DQ77KB+8G 1600+128G（MSATA）<br>在咸鱼花了750收了一台成品乱路由，但他的CPU为是奔腾的G2100T，于是自己的在某福报网站上购买了一个<code>E3-1265L</code>，这颗CPU在<a target="_blank" rel="noopener" href="https://ark.intel.com/content/www/us/en/ark.html">Intel Ark</a>上都找不到的，在<a target="_blank" rel="noopener" href="https://www.chiphell.com/thread-1904567-1-1.html">Chiphell</a>能找到一些相关测试，4C8T2.4G的性能来讲作为软路由完完全全可以满足我的性能需求了。AIDA64单烤FPU的温度78左右，emmm后面换个IS-30吧<br>主板DQ77KB这个板子其实一直处于涨价的阶段，以前才200+现在淘宝能找到的基本都是500了，这个板子自带两个Intel千兆网卡且有一个网口支持AMT，可以自己再加一个MINI-PCIE的无线网卡,虽然板子支持MSATA的SSD，但是其为SATA2，所以性能也不会咋地，跑个软路由够了，支持DC供电。<br>内存和硬盘都是成品里自带的，都是杂牌，颗粒也不想查了，在win10 1903下用AIDA64跑了下内存延迟是160,emmm等那天条子挂了再换吧  </p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装虚拟化平台"><a href="#安装虚拟化平台" class="headerlink" title="安装虚拟化平台"></a>安装虚拟化平台</h3><p>这里虚拟化平台使用的是<a target="_blank" rel="noopener" href="https://www.proxmox.com/">Proxmox Virtual Environment</a>（以下简称<code>PVE</code>）,PVE是一款基于<code>Debian</code>的开源服务器虚拟化环境，支持LXC和KVM，虽然是开源的，但是会提示购买授权。<br>安装PVE的过程很简单，去官网下载镜像然后引导安装即可，设置IP时一定要设置好，因为PVE安装后不支持DHCP，所以安装的时候只插一个网口，而这个网口就是LAN口，网关地址可以设置为你即将安装的软路由的LAN地址。但是我安装时遇到了问题，我当时安装时官方最新的发行版本是6.0.4（写稿时发现官网已回滚6.0.1），当时6.0.4在引导进入安装界面后无法进行安装操作，安装程序无法正常启动显示，于是我改安装的5.4.3（看了眼官网5.4.3的也回滚5.4.1了……），就能成功安装了。  </p>
+<h3 id="部署虚拟机"><a href="#部署虚拟机" class="headerlink" title="部署虚拟机"></a>部署虚拟机</h3><p>首先将其他网卡的网口映射&#x2F;直通进来，方便后面给虚拟机。<br>我采用的软路由系统为<code>koolshare</code>修改的<code>LEDE</code>,<code>LEDE</code>是以前人们不满足<code>OpenWRT</code>而新开的分支，如今已经合并了，目前<code>LEDE</code>的状态是<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/OpenWrt#Releases">Older version, still supported</a>，我选择的镜像为koolshare提供的虚拟机磁盘镜像。  </p>
+<p>在PVE里根据自己的物理机与实际需求创建好虚拟机，因为我采用的是虚拟机磁盘镜像，在创建好虚拟机后，将虚拟机的磁盘删除后，在物理机的里添加硬盘</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qm importdisk $虚拟机编号 $上传的虚拟机磁盘镜像 local-lvm</span><br></pre></td></tr></table></figure>
+<p>添加硬盘后对编辑LEDE的虚拟机硬件将刚才导入的磁盘绑定进去开启虚拟机即可</p>
+<h3 id="配置LEDE"><a href="#配置LEDE" class="headerlink" title="配置LEDE"></a>配置LEDE</h3><p>将虚拟机的WAN口与猫的互联网口相连，然后在LEDE里指定端口，然后就和配置传统路由器一样了，配置完后记得在PVE里保存快照</p>
+<h2 id="总结体验"><a href="#总结体验" class="headerlink" title="总结体验"></a>总结体验</h2><p>虽然我全文没有一个图，甚至连一个详细的配置方式都没有，但是我把我遇到的坑和关键点也出来了，因为无论是安装PVE还是设置虚拟机绝大部分都是一些非常常规的操作，关键点写出来就行了。我的给我的虚拟机的配置是4C4T+4G，这个配置跑软路由性能过剩了，体验相对于之前的AC68U完完全全强太多了，之前的68U开启服务后，一段时间后就会变的很慢，连1080P60FPS的YouTube都看不了，而软路由没遇到这个问题，跑了几天了晚上高峰期2KYouTube依旧可以随意拖拉，而在lede自己跑BT跑满本地带宽（100M）的情况下，虚拟机的CPU占用不到16%</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Gin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ygin.pro/ProxmoxVE-and-LEDE/">https://ygin.pro/ProxmoxVE-and-LEDE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ygin.pro" target="_blank">yGin.pro</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LEDE/">LEDE</a><a class="post-meta__tags" href="/tags/ProxmoxVE/">ProxmoxVE</a><a class="post-meta__tags" href="/tags/OpenWRT/">OpenWRT</a></div><div class="post_share"></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Gin.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Gin</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://t.me/yGin910"><i class="fab fa-telegram"></i><span>Chat Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://t.me/yGin910" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://store.steampowered.com/wishlist/profiles/76561198290144495/#sort=order" target="_blank" title="steam"><i class="fab fa-steam"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">确定方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">2.1.</span> <span class="toc-text">购买硬件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E5%8C%96%E5%B9%B3%E5%8F%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">安装虚拟化平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">2.2.2.</span> <span class="toc-text">部署虚拟机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AELEDE"><span class="toc-number">2.2.3.</span> <span class="toc-text">配置LEDE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%BD%93%E9%AA%8C"><span class="toc-number">2.3.</span> <span class="toc-text">总结体验</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Long-Time-No-See/" title="好久不见">好久不见</a><time datetime="2022-05-01T13:30:00.000Z" title="发表于 2022-05-01 21:30:00">2022-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ProxmoxVE-and-LEDE/" title="自己动手做一台软路由">自己动手做一台软路由</a><time datetime="2019-07-28T07:11:01.000Z" title="发表于 2019-07-28 15:11:01">2019-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/raspberry-pi-sms/" title="用树莓派做一个短信收发平台">用树莓派做一个短信收发平台</a><time datetime="2019-06-22T14:01:45.000Z" title="发表于 2019-06-22 22:01:45">2019-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Last-day/" title="最后一天">最后一天</a><time datetime="2017-04-03T09:55:11.000Z" title="发表于 2017-04-03 17:55:11">2017-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/the-new-home/" title="新家">新家</a><time datetime="2016-07-05T14:33:51.000Z" title="发表于 2016-07-05 22:33:51">2016-07-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2022 By Gin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://ygin.pro/ProxmoxVE-and-LEDE/'
+    this.page.identifier = 'ProxmoxVE-and-LEDE/'
+    this.page.title = '自己动手做一台软路由'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ygin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>if (window.DISQUSWIDGETS === undefined) {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://ygin.disqus.com/count.js';
+  s.id = 'dsq-count-scr';
+  (d.head || d.body).appendChild(s);
+} else {
+  DISQUSWIDGETS.getCount({reset: true});
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'UA-80316091-1', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
