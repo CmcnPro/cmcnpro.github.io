@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>时隔七年，我终于弄了人生第一台NAS</title>
+      <link href="/DIY-NAS/"/>
+      <url>/DIY-NAS/</url>
+      
+        <content type="html"><![CDATA[<p>又到了618，每年一到618的前夕，各个论坛社区里总有人会提到NAS这个东西。NAS，故名思意就是个存储，只是人们越来越让它干非存储的事，All in One有它的优势也有它的不足，每个人有每个人的需求，但是请记住，不要给自己创造需求，希望这篇博客可以让你拔草&#x2F;种草。  </p><h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>就如标题那样，其实我第一次萌生需要一个NAS已经是7年前的事了，没错群晖的DS916+发布后我就种草了，但是当时我对存储的需求是什么，下载和存储影视。其实我一直都有下柯南来看的习惯，即便我拥有柯南的正版流媒体账户。柯南我从13年重新开始追，我一直都是观看的某字幕组压制的版本，为什么我不选择官方正版的字幕呢？因为官方字幕曾经出现过剧透的翻译问题，并且还是在剧场版里。随便说下，剧场版送审时提交的版本为该字幕组翻译的版本，而上映时却采用的八一厂的翻译。<br>这就是我7年前的需求，很简单，于是我采用我2013年时的方案，USB挂载硬盘进行冷备，并且这个方案实施了七年。<br>而我现在的需求发生了哪些变化？</p><ul><li>需求的存储空间越来越大</li><li>我购买了一个性能非常强劲的Android TV盒子</li><li>Google drive的存储规则修改 免费的云空间不够我未来使用</li></ul><p>而相当于七年前，我软硬件环境又有了哪些变化？</p><ul><li>宽带100M&#x2F;10M 升级为 1G&#x2F;50M</li><li>公网IPV4，DDNS，OpenVPN</li><li>全屋WiFi6覆盖，老旧2.4G设备全部更新淘汰</li></ul><p>于是我决定我需要购置一款NAS，但是选NAS时，我遇到了一些问题。  </p><ul><li>群晖等国际大厂的家用NAS，硬件不够卷，即便不考虑“智商税”的部分，其硬件规格真的只是满足当年设备需求。  </li><li>国产NAS，硬件够卷，用户入口侧的APP也卷，但是因为隐私性，对不起我用不起。  </li><li>DIY NAS，我有能力和精力维护。</li></ul><p>自己DIY NAS有个最大问题，箱子。DIY的NAS并没有像成品NAS那样拥有紧凑的机身，大、贵是很多箱子的特征，选来选去，我选中了一套3D打印的方案<a href="https://github.com/thunder439/QNAS4">QNAS4</a>，4盘位的机箱（内部可额外加装两块2.5寸的硬盘）  </p><h1 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h1><p>该项目有提供BOE表，自行购买即可，说几个注意点吧  </p><ul><li>该开发板使用的是<code>J4125</code>，根据<a href="https://www.intel.com/content/www/us/en/products/sku/197305/intel-celeron-processor-J4125-4m-cache-up-to-2-70-ghz/specifications.html">Intel Ark</a>上的说法，最大内存为8G，因为该开发板为单根内存槽，如果插入单颗粒大小2G的内存，可能无法点亮，建议采用单颗粒1G，8G 2400的内存条  </li><li>虽然板子有自带PWM风扇的转接线，但是我并没有在BIOS里找到风扇曲线调整，并且在DSM7里也提示不支持PWM风扇。</li><li>关于jmb585转接卡，建议购买大厂，并且安装后尽量不要再去插拔，易损坏。</li><li>集成硬盘背板有个安装教程，可以找卖家索取，其余的部分真的很简单，基本上你拆过笔记本清灰那么你就有能力装它。</li></ul><h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><p>DIY NAS除了高度可定制硬件规格，还有就是可自行安装各种操作系统。我这里选择的系统为群晖DSM7.2,选择黑群晖很简单，一是我的设备的硬件规格不配玩truenas，二是其规格和群晖的DS920+高度接近，群晖多两个M.2硬盘位，我的NAS则是两个2.5G的网卡。<br>有的人可能会说，你这个NAS并没有比成品NAS强在哪啊，新的成品NAS已经开始采用12代处理器了，你这个还是10代处理器了，除了双2.5G网卡没有任何强势点。是的，这套配置其实就是CPU是我觉得毕竟拉跨的地方，但是想想，作为存储<code>J4125</code>的不够他跑满2.5G网卡吗？8G的内存也足够DSM7.2+Jellyfin+qBittorrent运行了。最重要的是我花了950得到了一个拥有的猫扇的小体积NAS，这个NAS其实就是为了机箱的妥协。如果不是机箱的束缚，谁不想用N100&#x2F;N305做NAS呢。<br>群晖我这用的引导项目是<a href="https://github.com/wjz304/arpl-i18n">arpl-i18n</a>，注意该项目截至2023年5月30日并没有集成<code>J4125</code>集显驱动，如果你需要用集显，请自行下载集显驱动。  </p><h1 id="部署Docker"><a href="#部署Docker" class="headerlink" title="部署Docker"></a>部署Docker</h1><p>在DSM7.2中docker已经升级更名为Container Manager，支持了Docker Compose。如果你的访问访问国际互联网存在问题，请使用微软的<code>https://dockerhub.azk8s.com</code>镜像服务。<br>关于Jellyfin的docker镜像，可以选择<a href="https://hub.docker.com/r/nyanmisaka/jellyfin">nyanmisaka</a>打包分发的版本，或者选择<a href="https://hub.docker.com/r/jellyfin/jellyfin">jellyfin</a>的官方分发，一个拥有良好社区环境的支持的版本才是值得信赖并使用的版本。  </p><h1 id="长时间使用报告"><a href="#长时间使用报告" class="headerlink" title="长时间使用报告"></a>长时间使用报告</h1><p>待更</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> DIY </tag>
+            
+            <tag> NAS </tag>
+            
+            <tag> docker </tag>
+            
+            <tag> DSM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OPPO Watch 2 ECG 体验</title>
       <link href="/OPPO-Watch-2-ECG/"/>
       <url>/OPPO-Watch-2-ECG/</url>
