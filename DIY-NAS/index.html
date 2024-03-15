@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>时隔七年，我终于弄了人生第一台NAS | yGin.link</title><meta name="author" content="Gin"><meta name="copyright" content="Gin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="不要给自己创造需求"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://ygin.link/DIY-NAS/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-80316091-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>时隔七年，我终于弄了人生第一台NAS | yGin.link</title><meta name="author" content="Gin"><meta name="copyright" content="Gin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="不要给自己创造需求"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://ygin.link/DIY-NAS/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-80316091-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-80316091-1');
@@ -8,7 +8,7 @@ gtag('config', 'UA-80316091-1');
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -28,12 +28,10 @@ gtag('config', 'UA-80316091-1');
   },
   copyright: undefined,
   lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
   islazyload: false,
@@ -49,85 +47,78 @@ gtag('config', 'UA-80316091-1');
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-05-30 23:56:27'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+  postUpdate: '2024-03-15 23:11:10'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
         }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
         }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
-  
-      win.activateDarkMode = function () {
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -135,9 +126,9 @@ gtag('config', 'UA-80316091-1');
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -147,13 +138,13 @@ gtag('config', 'UA-80316091-1');
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Gin.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/TopImg.png')"><nav id="nav"><span id="blog-info"><a href="/" title="yGin.link"><span class="site-name">yGin.link</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">时隔七年，我终于弄了人生第一台NAS</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-30T14:11:22.000Z" title="发表于 2023-05-30 22:11:22">2023-05-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-30T15:56:27.805Z" title="更新于 2023-05-30 23:56:27">2023-05-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="时隔七年，我终于弄了人生第一台NAS"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><span class="disqus-comment-count"><a href="https://ygin.link/DIY-NAS/#disqus_thread"><i class="fa-solid fa-spinner fa-spin"></i></a></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>又到了618，每年一到618的前夕，各个论坛社区里总有人会提到NAS这个东西。NAS，故名思意就是个存储，只是人们越来越让它干非存储的事，All in One有它的优势也有它的不足，每个人有每个人的需求，但是请记住，不要给自己创造需求，希望这篇博客可以让你拔草&#x2F;种草。  </p>
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Gin.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/TopImg.png')"><nav id="nav"><span id="blog-info"><a href="/" title="yGin.link"><span class="site-name">yGin.link</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">时隔七年，我终于弄了人生第一台NAS</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-30T14:11:22.000Z" title="发表于 2023-05-30 22:11:22">2023-05-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-15T15:11:10.102Z" title="更新于 2024-03-15 23:11:10">2024-03-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="时隔七年，我终于弄了人生第一台NAS"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="https://ygin.link/DIY-NAS/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>又到了618，每年一到618的前夕，各个论坛社区里总有人会提到NAS这个东西。NAS，故名思意就是个存储，只是人们越来越让它干非存储的事，All in One有它的优势也有它的不足，每个人有每个人的需求，但是请记住，不要给自己创造需求，希望这篇博客可以让你拔草&#x2F;种草。  </p>
 <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>就如标题那样，其实我第一次萌生需要一个NAS已经是7年前的事了，没错群晖的DS916+发布后我就种草了，但是当时我对存储的需求是什么，下载和存储影视。其实我一直都有下柯南来看的习惯，即便我拥有柯南的正版流媒体账户。柯南我从13年重新开始追，我一直都是观看的某字幕组压制的版本，为什么我不选择官方正版的字幕呢？因为官方字幕曾经出现过剧透的翻译问题，并且还是在剧场版里。随便说下，剧场版送审时提交的版本为该字幕组翻译的版本，而上映时却采用的八一厂的翻译。<br>这就是我7年前的需求，很简单，于是我采用我2013年时的方案，USB挂载硬盘进行冷备，并且这个方案实施了七年。<br>而我现在的需求发生了哪些变化？</p>
 <ul>
 <li>需求的存储空间越来越大</li>
@@ -182,11 +173,31 @@ gtag('config', 'UA-80316091-1');
 </ul>
 <h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><p>DIY NAS除了高度可定制硬件规格，还有就是可自行安装各种操作系统。我这里选择的系统为群晖DSM7.2,选择黑群晖很简单，一是我的设备的硬件规格不配玩truenas，二是其规格和群晖的DS920+高度接近，群晖多两个M.2硬盘位，我的NAS则是两个2.5G的网卡。<br>有的人可能会说，你这个NAS并没有比成品NAS强在哪啊，新的成品NAS已经开始采用12代处理器了，你这个还是10代处理器了，除了双2.5G网卡没有任何强势点。是的，这套配置其实就是CPU是我觉得毕竟拉跨的地方，但是想想，作为存储<code>J4125</code>的不够他跑满2.5G网卡吗？8G的内存也足够DSM7.2+Jellyfin+qBittorrent运行了。最重要的是我花了950得到了一个拥有的猫扇的小体积NAS，这个NAS其实就是为了机箱的妥协。如果不是机箱的束缚，谁不想用N100&#x2F;N305做NAS呢。<br>群晖我这用的引导项目是<a target="_blank" rel="noopener" href="https://github.com/wjz304/arpl-i18n">arpl-i18n</a>，注意该项目截至2023年5月30日并没有集成<code>J4125</code>集显驱动，如果你需要用集显，请自行下载集显驱动。  </p>
 <h1 id="部署Docker"><a href="#部署Docker" class="headerlink" title="部署Docker"></a>部署Docker</h1><p>在DSM7.2中docker已经升级更名为Container Manager，支持了Docker Compose。如果你的访问访问国际互联网存在问题，请使用微软的<code>https://dockerhub.azk8s.com</code>镜像服务。<br>关于Jellyfin的docker镜像，可以选择<a target="_blank" rel="noopener" href="https://hub.docker.com/r/nyanmisaka/jellyfin">nyanmisaka</a>打包分发的版本，或者选择<a target="_blank" rel="noopener" href="https://hub.docker.com/r/jellyfin/jellyfin">jellyfin</a>的官方分发，一个拥有良好社区环境的支持的版本才是值得信赖并使用的版本。  </p>
-<h1 id="长时间使用报告"><a href="#长时间使用报告" class="headerlink" title="长时间使用报告"></a>长时间使用报告</h1><p>待更</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ygin.link">Gin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ygin.link/DIY-NAS/">https://ygin.link/DIY-NAS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ygin.link" target="_blank">yGin.link</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DIY/">DIY</a><a class="post-meta__tags" href="/tags/NAS/">NAS</a><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/DSM/">DSM</a></div><div class="post_share"></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Gin.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Gin</div><div class="author-info__description">还活着</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://t.me/yGin910"><i class="fab fa-telegram"></i><span>Chat Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://t.me/yGin910" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://www.youtube.com/@yGin" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">组装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.</span> <span class="toc-text">安装系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Docker"><span class="toc-number">4.</span> <span class="toc-text">部署Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%95%BF%E6%97%B6%E9%97%B4%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A"><span class="toc-number">5.</span> <span class="toc-text">长时间使用报告</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/New-Domain/" title="我又换域名了">我又换域名了</a><time datetime="2024-03-05T15:32:28.000Z" title="发表于 2024-03-05 23:32:28">2024-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/DIY-NAS/" title="时隔七年，我终于弄了人生第一台NAS">时隔七年，我终于弄了人生第一台NAS</a><time datetime="2023-05-30T14:11:22.000Z" title="发表于 2023-05-30 22:11:22">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/OPPO-Watch-2-ECG/" title="OPPO Watch 2 ECG 体验">OPPO Watch 2 ECG 体验</a><time datetime="2022-07-04T12:34:52.000Z" title="发表于 2022-07-04 20:34:52">2022-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Long-Time-No-See/" title="好久不见">好久不见</a><time datetime="2022-05-01T13:30:00.000Z" title="发表于 2022-05-01 21:30:00">2022-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ProxmoxVE-and-LEDE/" title="自己动手做一台软路由">自己动手做一台软路由</a><time datetime="2019-07-28T07:11:01.000Z" title="发表于 2019-07-28 15:11:01">2019-07-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2024 By Gin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+<h1 id="长时间使用报告"><a href="#长时间使用报告" class="headerlink" title="长时间使用报告"></a>长时间使用报告</h1><p>2024&#x2F;03&#x2F;15更新 </p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="硬件部分"><a href="#硬件部分" class="headerlink" title="硬件部分"></a>硬件部分</h3><ul>
+<li>M2转SATA的转接卡<code>JMB585</code>可能因为机箱的打印精度的问题，导致可能会因为重力、外部震动等关系，导致整个<code>JMB585</code>接触不良，硬盘全部脱机，Raid降级等问题，需认真考虑NAS的摆放。</li>
+<li><code>JMB585</code>发热量不低，NAS存放环境风道不好的话，建议安装被动散热器，且考虑3D打印机箱的精度问题。</li>
+<li><code>J4125</code>发热量不大，无需额外安装被动散热，可能摸着温度不是很低，但是请放心，它不会得新冠。  </li>
+<li>开发板的BIOS里面的风扇调整比较简单，手动固定某个值百分比即可，我是选择固定了一个800转的猫扇，手放在硬盘仓前，即便装满4块盘也可以感觉到很明显的吸力（我的选择是风扇排风，直接将硬盘的废热排出机箱）。</li>
+</ul>
+<h3 id="软件部分"><a href="#软件部分" class="headerlink" title="软件部分"></a>软件部分</h3><p><em><strong>软件部分里提到的BUG，非常主观性，且不一定在所有类似的场景里都能复现，但在我所拥有的这套软硬件环境个体里是可复现的</strong></em></p>
+<ul>
+<li>我安装DSM时为2023年5月，当时DSM的正式通道还是<code>DSM7.1.1</code>,<code>7.2</code>为RC版本，我从<code>7.1.1</code>，升级到<code>7.2 RC</code>后，因模拟的机型为<code>DS920+</code>，其使用了新的特性<code>WriteOnce</code>，而我的设备上出现了什么bug呢？创建共享文件夹这个功能不正常，选加密的时候有且仅有在选择<code>WriteOnce</code>时才能创建成功，其余都不行，若选择跳过也自动创建的是<code>WriteOnce</code>文件夹。于是当时我选择回滚到<code>7.1.1</code>。而到了11月份我重新烧录新的引导，且升级安装<code>7.2</code>的正式版本时，这个BUG依旧存在。甚至我改机型为<code>DS918+</code>且格盘安装后创建非加密的共享文件夹也会报<code>WriteOnce</code>的错，但是再次创建就可以创建成功。<em><strong>此案例我没有在社区找到任何类似的案例</strong></em>。</li>
+<li>Docker下的Jellyfin，<code>J4125</code>的GPU为<code>UHD 630</code>，虽然<code>J4125</code>的CPU部分架构为<code>Gemini Lake Refresh</code>，大家爱称呼它为第十代CPU，但是它的iGPU其实是<code>Gen9.5</code>，而10代CPU里面既有9.5代，例如<code>i9-10980HK</code>，也有11代，例如<code>i7-1065G7</code>。按照社区查到资料，Linux下内核添加<code>i915.enable_guc=2</code>后可以使用<code>Low-Power H.264</code>，但是我开启失败了。  </li>
+<li>Jellyfin里的刮削时候，我刮削了詹子萱这位演员在豆瓣的数据后，无法在web界面编辑其信息，且点击她查看详细信息时Jellyfin一直转圈，Jellyfin打印的日志也报错，删除<code>library.db</code>后重新刮削也有这个问题。</li>
+</ul>
+<h3 id="非NAS部分"><a href="#非NAS部分" class="headerlink" title="非NAS部分"></a>非NAS部分</h3><p>我使用的非大陆地区销售的类原生Android Phone和TV以及Windows PC，使用Android TV观看海外正版影视作品时，各种特性均能正常工作（论花钱认证的重要性）。然而我使用它们在Jellyfin观影时灾难就来了。  </p>
+<ul>
+<li>Android上的ExoPlayer可以正常的播放HDR、杜比等影片，但是Exoplayer对于字幕的支持极差。</li>
+<li>在Android上使用MPV播放时，虽然对于字幕有了更完善的支持，但是HDR、杜比等均不支持。  </li>
+<li>Android下的Kodi硬解杜比仅支持部分格式（注：硬解需要设备过认证）。  </li>
+<li>B站的ijkplayer放国产剧的时兼容性更好，但是设备功耗会更高，至于HDR、杜比等特效没测试。</li>
+</ul>
+<p>希望Android这部分的生态能加强吧，能早日推出Infuse这种级别的APP吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://ygin.link">Gin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://ygin.link/DIY-NAS/">https://ygin.link/DIY-NAS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ygin.link" target="_blank">yGin.link</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DIY/">DIY</a><a class="post-meta__tags" href="/tags/NAS/">NAS</a><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/DSM/">DSM</a></div><div class="post_share"></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Gin.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Gin</div><div class="author-info__description">还活着</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://t.me/yGin910"><i class="fab fa-telegram"></i><span>Chat Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://t.me/yGin910" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a><a class="social-icon" href="https://www.youtube.com/@yGin" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">组装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.</span> <span class="toc-text">安装系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Docker"><span class="toc-number">4.</span> <span class="toc-text">部署Docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%95%BF%E6%97%B6%E9%97%B4%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A"><span class="toc-number">5.</span> <span class="toc-text">长时间使用报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">5.1.</span> <span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E9%83%A8%E5%88%86"><span class="toc-number">5.1.1.</span> <span class="toc-text">硬件部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E9%83%A8%E5%88%86"><span class="toc-number">5.1.2.</span> <span class="toc-text">软件部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9ENAS%E9%83%A8%E5%88%86"><span class="toc-number">5.1.3.</span> <span class="toc-text">非NAS部分</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/New-Domain/" title="我又换域名了">我又换域名了</a><time datetime="2024-03-05T15:32:28.000Z" title="发表于 2024-03-05 23:32:28">2024-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/DIY-NAS/" title="时隔七年，我终于弄了人生第一台NAS">时隔七年，我终于弄了人生第一台NAS</a><time datetime="2023-05-30T14:11:22.000Z" title="发表于 2023-05-30 22:11:22">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/OPPO-Watch-2-ECG/" title="OPPO Watch 2 ECG 体验">OPPO Watch 2 ECG 体验</a><time datetime="2022-07-04T12:34:52.000Z" title="发表于 2022-07-04 20:34:52">2022-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Long-Time-No-See/" title="好久不见">好久不见</a><time datetime="2022-05-01T13:30:00.000Z" title="发表于 2022-05-01 21:30:00">2022-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/ProxmoxVE-and-LEDE/" title="自己动手做一台软路由">自己动手做一台软路由</a><time datetime="2019-07-28T07:11:01.000Z" title="发表于 2019-07-28 15:11:01">2019-07-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2024 By Gin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
-    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
       .then(() => {
         pangu.autoSpacingPage()
       })
@@ -202,34 +213,42 @@ function panguInit () {
 }
 
 document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
-  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
-  if ($mermaidWrap.length) {
-    window.runMermaid = () => {
-      window.loadMermaid = true
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
 
-      Array.from($mermaidWrap).forEach((item, index) => {
-        const mermaidSrc = item.firstElementChild
-        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
-        const mermaidID = 'mermaid-' + index
-        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
-        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
-          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
         })
-      })
-    }
+      }
 
-    const loadMermaid = () => {
-      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
-    }
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
 
-    btf.addModeChange('mermaid', () => {
-      window.runMermaid()
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
     })
-
-    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
   }
-})()</script><script>function loadDisqus () {
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
   const disqus_config = function () {
     this.page.url = 'https://ygin.link/DIY-NAS/'
     this.page.identifier = '/DIY-NAS/'
@@ -237,45 +256,56 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
   }
 
   const disqusReset = () => {
-    DISQUS.reset({
+    window.DISQUS && window.DISQUS.reset({
       reload: true,
       config: disqus_config
     })
   }
 
-  btf.addModeChange('disqus', disqusReset)
+  btf.addGlobalFn('themeChange', disqusReset, 'disqus')
 
-  if (window.DISQUS) disqusReset()
-  else {
-    (function() { 
-      var d = document, s = d.createElement('script');
-      s.src = 'https://ygin.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
+  const loadDisqus = () =>{
+    if (window.DISQUS) disqusReset()
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://ygin.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
   }
-}
 
-if ('Disqus' === 'Disqus' || !false) {
-  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
-  else loadDisqus()
-} else {
-  function loadOtherComment () {
-    loadDisqus()
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=ygin&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
   }
-}
-</script><script>if (window.DISQUSWIDGETS === undefined) {
-  var d = document, s = d.createElement('script');
-  s.src = 'https://ygin.disqus.com/count.js';
-  s.id = 'dsq-count-scr';
-  (d.head || d.body).appendChild(s);
-} else {
-  DISQUSWIDGETS.getCount({reset: true});
-}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = true;
 POWERMODE.mobile = false;
 document.body.addEventListener('input', POWERMODE);
-</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',
@@ -287,11 +317,11 @@ var pjax = new Pjax({
 
 document.addEventListener('pjax:send', function () {
 
-  // removeEventListener scroll 
-  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
-  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
 
-  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  document.getElementById('rightside').classList.remove('rightside-show')
   
   if (window.aplayers) {
     for (let i = 0; i < window.aplayers.length; i++) {
@@ -323,7 +353,6 @@ document.addEventListener('pjax:complete', function () {
 
   GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
 
-  typeof chatBtnFn === 'function' && chatBtnFn()
   typeof panguInit === 'function' && panguInit()
 
   // google analytics
@@ -338,8 +367,8 @@ document.addEventListener('pjax:complete', function () {
   typeof Prism === 'object' && Prism.highlightAll()
 })
 
-document.addEventListener('pjax:error', (e) => {
+document.addEventListener('pjax:error', e => {
   if (e.request.status === 404) {
     pjax.loadUrl('/404.html')
   }
-})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
