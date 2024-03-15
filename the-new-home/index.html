@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-
       if (!eleGroup) return
       const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
 
-      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=ygin&api_key=&thread:link=${cleanedLinks}`,{
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=ygin&api_key=BMDRXXYOvbpEqLJQemkXq8pK6VY2CO96UMrQA1TFp6Oj6JnQnL5zDa3Yt9O7lMSC&thread:link=${cleanedLinks}`,{
         method: 'GET'
       })
       const result = await res.json()
